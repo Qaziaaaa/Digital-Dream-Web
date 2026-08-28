@@ -1,5 +1,7 @@
 "use client";
 
+import type { CSSProperties } from "react";
+
 import { useState } from "react";
 
 const faqs = [
@@ -33,7 +35,7 @@ export function FaqSection() {
       <div className="padding-global">
         <div className="w-layout-blockcontainer container w-container">
           <div className="section-main-wrapper">
-            <div className="section-header is-max">
+            <div className="section-header is-max" data-reveal>
               <div className="section-tag-wrapper">
                 <img
                   src="/axiolance/690f74385894ecf58abef4d1_68bfb430481fa3c0e8610f39_Vector (3) 1.svg"
@@ -51,8 +53,9 @@ export function FaqSection() {
                 return (
                   <div
                     key={f.q}
+                    data-reveal
                     className={isOpen ? "faq-items-wrapper open" : "faq-items-wrapper"}
-                    style={{ height: isOpen ? "auto" : "70px" }}
+                    style={{ height: isOpen ? "auto" : "70px", "--d": `${i * 0.08}s` } as CSSProperties}
                   >
                     <div
                       className="question-wrapper"

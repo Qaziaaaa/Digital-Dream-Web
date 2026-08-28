@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { FormEvent } from "react";
+import type { CSSProperties, FormEvent } from "react";
 import { site } from "@/lib/site";
 
 export function ContactSection() {
@@ -34,7 +34,7 @@ export function ContactSection() {
       <div className="padding-global is-contact">
         <div className="w-layout-blockcontainer container w-container">
           <div className="section-main-wrapper">
-            <div className="section-header is-max">
+            <div className="section-header is-max" data-reveal>
               <div className="section-tag-wrapper">
                 <img
                   src="/axiolance/690f74385894ecf58abef4d1_68bfb430481fa3c0e8610f39_Vector (3) 1.svg"
@@ -47,7 +47,7 @@ export function ContactSection() {
               <h2 className="sub-heading">We&rsquo;d Love to Hear From You</h2>
             </div>
             <div className="contact-main-wrapper">
-              <div className="contact-info-wrapper">
+              <div className="contact-info-wrapper" data-reveal>
                 <div className="inner-container contact-info">
                   <div className="address-wrapper">
                     <div className="pricing-title is-white">Address</div>
@@ -74,7 +74,7 @@ export function ContactSection() {
                   </div>
                 </div>
               </div>
-              <div className="contact-form-wrapper">
+              <div className="contact-form-wrapper" data-reveal style={{ "--d": "0.15s" } as CSSProperties}>
                 <div className="inner-container contact">
                   <h2 className="sub-heading">Send Us a Message</h2>
                   <div className="text-regular">

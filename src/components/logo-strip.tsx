@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 export function LogoStrip() {
   const logos = [
     "68d25330b01bba41673186a3_Logo (1).svg",
@@ -14,10 +16,10 @@ export function LogoStrip() {
     <section className="section-logo">
       <div className="w-layout-blockcontainer container w-container">
         <div className="logo-main-wrapper">
-          <div className="logo-header">
+          <div className="logo-header" data-reveal>
             <div className="logo-title">Trusted by the world&rsquo;s most innovative teams</div>
           </div>
-          <div className="logo-wrapper">
+          <div className="logo-wrapper" data-reveal style={{ "--d": "0.08s" } as CSSProperties}>
             {logos.map((l, i) => (
               <img
                 key={l}

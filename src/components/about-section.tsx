@@ -1,10 +1,12 @@
+import type { CSSProperties } from "react";
+
 export function AboutSection() {
   return (
     <section id="About" className="section-about">
       <div className="padding-global">
         <div className="w-layout-blockcontainer container small w-container">
           <div className="about-main-wrapper">
-            <div className="about-content">
+            <div className="about-content" data-reveal>
               <div className="inner-container">
                 <div className="section-tag-wrapper">
                   <img
@@ -40,7 +42,7 @@ export function AboutSection() {
                 </div>
               </div>
             </div>
-            <div className="about-image">
+            <div className="about-image" data-reveal style={{ "--d": "0.1s" } as CSSProperties}>
               <img
                 src="/axiolance/691b629732d913f2c2326410_Ultimate-Application-for-Managing (2).avif"
                 loading="lazy"

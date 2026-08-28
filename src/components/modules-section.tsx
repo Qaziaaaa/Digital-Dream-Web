@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 const services = [
   {
     title: "Web Development",
@@ -37,7 +39,7 @@ export function ModulesSection() {
       <div className="padding-global">
         <div className="w-layout-blockcontainer container w-container">
           <div className="features-main-wrapper">
-            <div className="section-header is-max">
+            <div className="section-header is-max" data-reveal>
               <div className="section-tag-wrapper">
                 <img
                   src="/axiolance/690f74385894ecf58abef4d1_68bfb430481fa3c0e8610f39_Vector (3) 1.svg"
@@ -53,7 +55,7 @@ export function ModulesSection() {
             </div>
             <div className="module-card-wrapper">
               {services.map((s, i) => (
-                <div className={`module-card _0${i + 1}`} key={s.title}>
+                <div className={`module-card _0${i + 1}`} key={s.title} data-reveal style={{ "--d": `${i * 0.08}s` } as CSSProperties}>
                   <div className="module-logo-wrap">
                     <div className="logo-box">
                       <img src={s.icon} loading="lazy" alt="" className="module-logo" />

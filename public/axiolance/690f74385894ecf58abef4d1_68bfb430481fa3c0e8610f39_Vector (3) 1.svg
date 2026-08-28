@@ -6,11 +6,11 @@
 <defs>
 <linearGradient id="paint0_linear_410_709" x1="20.4" y1="2.19717e-07" x2="20.4" y2="7.8" gradientUnits="userSpaceOnUse">
 <stop stop-color="#2684FC"/>
-<stop offset="1" stop-color="#00FCE7"/>
+<stop offset="1" stop-color="#2684FC"/>
 </linearGradient>
 <linearGradient id="paint1_linear_410_709" x1="12" y1="4.07558" x2="12" y2="24.0001" gradientUnits="userSpaceOnUse">
 <stop stop-color="#2684FC"/>
-<stop offset="1" stop-color="#00FCE7"/>
+<stop offset="1" stop-color="#2684FC"/>
 </linearGradient>
 <clipPath id="clip0_410_709">
 <rect width="24" height="24" fill="white"/>

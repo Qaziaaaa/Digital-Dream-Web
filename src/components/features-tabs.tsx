@@ -1,5 +1,7 @@
 "use client";
 
+import type { CSSProperties } from "react";
+
 import { useState } from "react";
 
 const tabs = [
@@ -52,7 +54,7 @@ export function FeaturesTabs() {
       <div className="padding-global">
         <div className="w-layout-blockcontainer container w-container">
           <div className="features-main-wrapper">
-            <div className="section-header is-max">
+            <div className="section-header is-max" data-reveal>
               <div className="section-tag-wrapper">
                 <img
                   src="/axiolance/690f74385894ecf58abef4d1_68bfb430481fa3c0e8610f39_Vector (3) 1.svg"
@@ -66,7 +68,7 @@ export function FeaturesTabs() {
                 Everything You Need to Build and Grow Online
               </h2>
             </div>
-            <div className="features-tab-wrapper">
+            <div className="features-tab-wrapper" data-reveal style={{ "--d": "0.12s" } as CSSProperties}>
               <div className="tabs w-tabs">
                 <div className="tabs-menu w-tab-menu" role="tablist">
                   {tabs.map((t, i) => (
@@ -105,7 +107,7 @@ export function FeaturesTabs() {
                       }
                     >
                       <div className="tab-content-wrap">
-                        <img src={t.img} loading="lazy" alt={t.alt} className="tab-image" />
+                        <img key={`${t.title}-${active}`} src={t.img} loading="lazy" alt={t.alt} className="tab-image" />
                       </div>
                     </div>
                   ))}

@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 function Check({ x = false }: { x?: boolean }) {
   return (
     <img
@@ -26,7 +28,7 @@ export function PricingSection() {
       <div className="padding-global">
         <div className="w-layout-blockcontainer container w-container">
           <div className="pricing-main-wrapper">
-            <div className="section-header is-max">
+            <div className="section-header is-max" data-reveal>
               <div className="section-tag-wrapper">
                 <img
                   src="/axiolance/690f74385894ecf58abef4d1_68bfb430481fa3c0e8610f39_Vector (3) 1.svg"
@@ -41,7 +43,7 @@ export function PricingSection() {
               </h2>
             </div>
             <div className="pricing-card-wrapper">
-              <div className="pricing-card">
+              <div className="pricing-card" data-reveal>
                 <div className="pricing-title">Website Project</div>
                 <div className="text-regular">
                   All the basics for your business. Ideal for landing pages, portfolios, and small
@@ -70,7 +72,7 @@ export function PricingSection() {
                 />
               </div>
 
-              <div className="pricing-card _2nd">
+              <div className="pricing-card _2nd" data-reveal style={{ "--d": "0.12s" } as CSSProperties}>
                 <div className="pricing-title is-light">Business Growth</div>
                 <div className="text-regular is-white">
                   Everything a growing business needs. Perfect for e-commerce stores, SaaS apps,
@@ -103,7 +105,7 @@ export function PricingSection() {
                 </div>
               </div>
 
-              <div className="pricing-bg-cover">
+              <div className="pricing-bg-cover" data-reveal style={{ "--d": "0.24s" } as CSSProperties}>
                 <div className="bg-right" />
                 <div className="bg-left" />
                 <div className="pricing-card">
