@@ -373,7 +373,7 @@ body{ font-family: var(--_fonts---body-fonts); }
 
 
 /* logo sizing (brand mark is square, ref wordmark is wide) */
-.navbar .nav-image{ height:40px; width:auto; }
+.navbar .nav-image{ height:56px; width:auto; }
 .footer-logo{ max-width:180px; }
 .footer .logo-main{ height:34px; width:auto; }
 
@@ -551,4 +551,9 @@ html.reveal-ready [data-reveal].is-visible{ opacity:1; transform:none; }
 @media (max-width: 991px){
   .nav-menu-wrapper{ opacity: 0; transform: translateY(-10px); visibility: hidden; pointer-events: none; }
   .nav-menu-wrapper.open{ opacity: 1; transform: none; visibility: visible; pointer-events: auto; }
+}
+
+/* bigger logo while keeping the thin nav height: trim vertical padding (desktop only) */
+@media (min-width: 992px){
+  .navbar{ padding-top: 13px; padding-bottom: 13px; }
 }
