@@ -1,12 +1,10 @@
-import type { CSSProperties } from "react";
-
 export function AboutSection() {
   return (
     <section id="About" className="section-about">
       <div className="padding-global">
         <div className="w-layout-blockcontainer container small w-container">
           <div className="about-main-wrapper">
-            <div className="about-content" data-reveal>
+            <div className="about-content">
               <div className="inner-container">
                 <div className="section-tag-wrapper">
                   <img
@@ -18,16 +16,19 @@ export function AboutSection() {
                   <div className="tag-text">About Digital Dream Web</div>
                 </div>
               </div>
-              <h2 className="sub-heading">
+              <h2 className="sub-heading" data-w-id="f413ce83-000a-55c6-1b97-ca71ed641af9">
                 A Full-Service Agency for Digital Products &amp; Growth
               </h2>
-              <p className="text-large">
+              <p className="text-large" data-w-id="2a0f10d4-c964-8d55-9344-1297faf8e170">
                 Digital Dream Web is a full-service software agency helping businesses design,
                 build, and scale digital products. From marketing websites to complex SaaS
                 platforms, we handle strategy, design, development, and growth — so you can focus
                 on running your business.
               </p>
-              <div className="inner-container about">
+              <div
+                className="inner-container about"
+                data-w-id="1f6e3ad5-5543-5eab-d3eb-9c8df254e3e0"
+              >
                 <div className="about-count">
                   <h2 className="sub-heading">
                     2.5<span className="text-blue">x</span>
@@ -42,7 +43,10 @@ export function AboutSection() {
                 </div>
               </div>
             </div>
-            <div className="about-image" data-reveal style={{ "--d": "0.1s" } as CSSProperties}>
+            <div
+              className="about-image"
+              data-w-id="39da0660-16d6-84d3-34b2-edceed664141"
+            >
               <img
                 src="/axiolance/691b629732d913f2c2326410_Ultimate-Application-for-Managing (2).avif"
                 loading="lazy"

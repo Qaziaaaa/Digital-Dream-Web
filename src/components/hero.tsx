@@ -58,13 +58,16 @@ export function Hero() {
     <section className="hero-wrapper">
       <div className="hero-top-border-wrap">
         <div className="navbar-border-area">
-          <div className="navbar-border-line-animation">
+          <div
+            className="navbar-border-line-animation"
+            data-w-id="d5504ce9-62f9-6152-69f6-19b3d1c7918c"
+          >
             <div className="border-dot-block">
               <div className="nav-dot-border" />
             </div>
           </div>
         </div>
-        <div className="border-line">
+        <div className="border-line" data-w-id="d5504ce9-62f9-6152-69f6-19b3d1c7918f">
           <BorderDots />
         </div>
       </div>
@@ -72,7 +75,10 @@ export function Hero() {
       <div className="container banner">
         <div className="hero-all-content-area">
           <div className="hero-content-block">
-            <div className="banner-badge-wrapper">
+            <div
+              className="banner-badge-wrapper"
+              data-w-id="abf002c0-a56c-0d8f-2c89-321507cb5015"
+            >
               <div className="author-wraper">
                 <img
                   src="/axiolance/68d21a39b20d9e053aabf81a_Rectangle 190.avif"
@@ -97,8 +103,10 @@ export function Hero() {
             </div>
 
             <div className="inner-container banner">
-              <h1 className="main-heading">We Build Websites, Apps</h1>
-              <div className="inner-container is-flex">
+              <h1 className="main-heading" data-w-id="3b1dac7c-d603-ed44-5bc3-410a0ce5b3ec">
+                We Build Websites, Apps
+              </h1>
+              <div className="inner-container is-flex" data-w-id="005a2ab4-8bf8-7792-5da0-5fdcb15167a4">
                 <div className="inner-container">
                   <div className="main-heading">&amp; Software That</div>
                 </div>
@@ -111,17 +119,21 @@ export function Hero() {
                     loading="lazy"
                     alt=""
                     className="text-cover"
+                    data-w-id="5cc9496a-63de-ee71-93d7-937c8ebb52b7"
                   />
                 </div>
               </div>
             </div>
 
-            <p className="text-large">
+            <p className="text-large" data-w-id="f89eaf18-b426-df3a-579f-5be37945ddc6">
               A full-service software agency helping startups and growing businesses launch fast,
               secure websites, apps, and AI-powered products that drive revenue.
             </p>
 
-            <div className="banner-button-wrapper">
+            <div
+              className="banner-button-wrapper"
+              data-w-id="2e584957-d1fb-7f92-dee1-ee5777ab2f65"
+            >
               <a href="#Contact" className="button-primary w-button">
                 Start Your Project
               </a>
@@ -134,7 +146,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="border-line">
+          <div className="border-line" data-w-id="d5504ce9-62f9-6152-69f6-19b3d1c7919a">
             <BorderDots />
           </div>
         </div>
@@ -152,12 +164,13 @@ export function Hero() {
 
 export function DashbordOverlay() {
   return (
-    <div className="dashbord-image-wrapper">
+    <div className="dashbord-image-wrapper" data-w-id="f125550c-4eb5-5fa6-74d2-ee4a75889afb">
       <img
         src="/axiolance/691b7a80823adc69c855f297_dashboard-overview.avif"
         loading="lazy"
         alt="Project dashboard overview"
         className="overview-image"
+        data-w-id="c7eab989-4257-52fa-44ba-40b2ef0ee44c"
       />
       <div className="dashbord-image-cover">
         <img
@@ -172,6 +185,7 @@ export function DashbordOverlay() {
         loading="lazy"
         alt="Project progress"
         className="progress-image"
+        data-w-id="13d0759a-7e3e-0383-c05e-858629ed74bf"
       />
       <div className="dashbord-image-overly" />
     </div>

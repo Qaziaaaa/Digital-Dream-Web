@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 const links = [
@@ -13,32 +13,9 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
-
-  useEffect(() => {
-    let last = 0;
-    const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 8);
-      if (y > 140 && y > last) {
-        setHidden(true);
-      } else {
-        setHidden(false);
-      }
-      last = y;
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
-    <div
-      data-animation="default"
-      role="banner"
-      className={`navbar w-nav${scrolled ? " is-scrolled" : ""}${hidden ? " is-hidden" : ""}`}
-    >
+    <div data-animation="default" role="banner" className="navbar w-nav">
       <div className="container navbar-container">
         <div className="w-layout-grid navbar-wrapper">
           <Link href="/" aria-current="page" className="navbar-brand w-nav-brand w--current">

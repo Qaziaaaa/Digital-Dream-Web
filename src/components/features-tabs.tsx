@@ -1,8 +1,6 @@
 "use client";
 
-import type { CSSProperties } from "react";
-
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const tabs = [
   {
@@ -48,13 +46,48 @@ const Arrow = () => (
 
 export function FeaturesTabs() {
   const [active, setActive] = useState(0);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const menu = menuRef.current;
+    if (!menu) return;
+
+    const links = Array.from(menu.querySelectorAll<HTMLElement>(".tab-link"));
+    links.forEach((link, i) => {
+      const content = link.querySelector<HTMLElement>(".tab-button-content");
+      const arrow = link.querySelector<HTMLElement>(".arrow-right");
+      if (!content || !arrow) return;
+      const isActive = i === active;
+      const start = content.offsetHeight;
+      const end = isActive ? content.scrollHeight : 0;
+      content.animate(
+        [
+          { height: `${start}px` },
+          { height: `${end}px`, easing: "ease" },
+        ],
+        { duration: 200 }
+      ).onfinish = () => {
+        content.style.height = isActive ? "auto" : "0px";
+      };
+      const arrowStart = start > 0 ? "rotate(-50deg)" : "rotate(0deg)";
+      arrow.animate(
+        [
+          { transform: arrowStart },
+          { transform: isActive ? "rotate(-50deg)" : "rotate(0deg)", easing: "ease" },
+        ],
+        { duration: 200 }
+      ).onfinish = () => {
+        arrow.style.transform = isActive ? "rotate(-50deg)" : "rotate(0deg)";
+      };
+    });
+  }, [active]);
 
   return (
     <section className="section-features">
       <div className="padding-global">
         <div className="w-layout-blockcontainer container w-container">
           <div className="features-main-wrapper">
-            <div className="section-header is-max" data-reveal>
+            <div className="section-header is-max">
               <div className="section-tag-wrapper">
                 <img
                   src="/axiolance/690f74385894ecf58abef4d1_68bfb430481fa3c0e8610f39_Vector (3) 1.svg"
@@ -64,13 +97,19 @@ export function FeaturesTabs() {
                 />
                 <div className="tag-text">Main Services</div>
               </div>
-              <h2 className="sub-heading">
+              <h2
+                className="sub-heading"
+                data-w-id="aca55abb-644f-2c6b-9d99-e039275994f0"
+              >
                 Everything You Need to Build and Grow Online
               </h2>
             </div>
-            <div className="features-tab-wrapper" data-reveal style={{ "--d": "0.12s" } as CSSProperties}>
+            <div
+              className="features-tab-wrapper"
+              data-w-id="aca55abb-644f-2c6b-9d99-e039275994ed"
+            >
               <div className="tabs w-tabs">
-                <div className="tabs-menu w-tab-menu" role="tablist">
+                <div className="tabs-menu w-tab-menu" role="tablist" ref={menuRef}>
                   {tabs.map((t, i) => (
                     <a
                       key={t.title}

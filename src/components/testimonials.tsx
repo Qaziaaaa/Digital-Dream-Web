@@ -55,7 +55,10 @@ export function Testimonials() {
     <section className="section-testimonials">
       <div className="padding-global">
         <div className="w-layout-blockcontainer container lg w-container">
-          <div className="testimonials-main-wrapper" data-reveal>
+          <div
+            className="testimonials-main-wrapper"
+            data-w-id="7652ffc4-a06b-6afc-64e8-1f8c722d1375"
+          >
             <div className="slider w-slider">
               <div className="mask w-slider-mask">
                 <div

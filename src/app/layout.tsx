@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
-import { ScrollReveal } from "@/components/scroll-reveal";
+import { RevealEngine } from "@/components/reveal-engine";
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -132,7 +132,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <main id="main">
-          <ScrollReveal />
+          <RevealEngine />
           {children}
         </main>
       </body>
