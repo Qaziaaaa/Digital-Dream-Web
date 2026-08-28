@@ -396,27 +396,23 @@ body{ font-family: var(--_fonts---body-fonts); }
    (reveal-engine.tsx) using the exact IX2 delays, 1000ms outQuart ease.
    No default hiding here so no-JS keeps all content visible. */
 
-/* hero border "energy" lines: dots travel along the borders (20s loops, matching IX2) */
+/* hero border "energy" lines: dots travel the full length of the vertical lines
+   (6s loops, staggered per column, alternating) so the moving lines are clearly visible */
 .border-dot{ position:relative; }
 .dot-border{
   position: absolute;
   top: 0;
   left: 0;
-  animation-duration: 20s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation: dotY 6s linear infinite;
+  animation-name: dotY;
 }
-.border-dot._01 .dot-border{ animation-name: dotY01; }
-.border-dot._02 .dot-border{ animation-name: dotY02; }
-.border-dot._03 .dot-border{ animation-name: dotY03; }
-.border-dot._04 .dot-border{ animation-name: dotY04; }
-.border-dot._06 .dot-border{ animation-name: dotY06; }
-@keyframes dotY01{ from{ top:60%; } to{ top:100%; } }
-@keyframes dotY02{ from{ top:90%; } to{ top:100%; } }
-@keyframes dotY03{ from{ top:25%; } to{ top:100%; } }
-@keyframes dotY04{ from{ top:75%; } to{ top:100%; } }
-@keyframes dotY06{ from{ top:80%; } to{ top:100%; } }
+.border-dot._01 .dot-border{ animation-direction: alternate; }
+.border-dot._02 .dot-border{ animation-delay: -2s; animation-direction: alternate-reverse; }
+.border-dot._03 .dot-border{ animation-delay: -4s; }
+.border-dot._04 .dot-border{ animation-delay: -1s; animation-direction: alternate; }
+.border-dot._05 .dot-border{ animation-delay: -3s; animation-direction: alternate-reverse; }
+.border-dot._06 .dot-border{ animation-delay: -5s; }
+@keyframes dotY{ from{ top:0; } to{ top:calc(100% - 40px); } }
 
 .navbar-border-line-animation{ overflow:hidden; }
 .border-dot-block{ overflow:hidden; }
