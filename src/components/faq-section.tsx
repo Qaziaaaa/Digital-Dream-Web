@@ -55,20 +55,19 @@ export function FaqSection() {
                     key={f.q}
                     data-reveal
                     className={isOpen ? "faq-items-wrapper open" : "faq-items-wrapper"}
-                    style={{ height: isOpen ? "auto" : "70px", "--d": `${i * 0.08}s` } as CSSProperties}
+                    onClick={() => setOpen(isOpen ? -1 : i)}
+                    role="button"
+                    tabIndex={0}
+                    aria-expanded={isOpen}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setOpen(isOpen ? -1 : i);
+                      }
+                    }}
+                    style={{ "--d": `${i * 0.08}s` } as CSSProperties}
                   >
-                    <div
-                      className="question-wrapper"
-                      onClick={() => setOpen(isOpen ? -1 : i)}
-                      role="button"
-                      tabIndex={0}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          setOpen(isOpen ? -1 : i);
-                        }
-                      }}
-                    >
+                    <div className="question-wrapper">
                       <div className="question-text">Q{i + 1}</div>
                       <div className="question-cover">
                         <div className="question-text">{f.q}</div>
