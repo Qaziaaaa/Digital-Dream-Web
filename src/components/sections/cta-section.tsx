@@ -13,15 +13,15 @@ export function CtaSection({ id = "contact" }: { id?: string }) {
       />
       <div className="container-x relative mx-auto max-w-3xl text-center">
         <Reveal>
-          <p className="eyebrow-on-dark">Let's build together</p>
+          <p className="eyebrow-on-dark">Let&apos;s build together</p>
           <h2
             id="cta-heading"
             className="mt-3 text-balance text-3xl font-bold tracking-tight text-white md:text-4xl"
           >
-            Have a project in mind? Let's make it real.
+            Have a project in mind? Let&apos;s make it real.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/70">
-            Tell us where you want to go — we'll map the route, scope the work, and give you a fixed
+            Tell us where you want to go — we&apos;ll map the route, scope the work, and give you a fixed
             price with no surprises. Free consultation, reply within one business day.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3.5">

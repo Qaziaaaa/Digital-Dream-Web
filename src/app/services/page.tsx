@@ -112,7 +112,7 @@ export default function ServicesPage() {
                         <span className="ml-3 h-4 flex-1 rounded bg-bg-tinted" />
                       </div>
                       <div className="p-6">
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-500">What's included</p>
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-500">What&apos;s included</p>
                         <ul className="mt-4 space-y-3">
                           {s.features.map((f) => (
                             <li key={f} className="flex items-start gap-3 text-sm text-ink">

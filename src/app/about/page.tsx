@@ -80,9 +80,9 @@ export default function AboutPage() {
                 and ongoing support.
               </p>
               <p>
-                We've shipped e-commerce platforms with real payments, AI agency experiences,
+                We&apos;ve shipped e-commerce platforms with real payments, AI agency experiences,
                 consumer apps, and AI-powered product features. Every project is treated as a
-                product we're proud to put our name on — because it is.
+                product we&apos;re proud to put our name on — because it is.
               </p>
               <p>
                 Today we work with startups and growing businesses that want a partner who thinks

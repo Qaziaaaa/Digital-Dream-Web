@@ -20,7 +20,7 @@ export default function NotFound() {
         <p className="font-display text-7xl font-bold text-brand-500 sm:text-8xl">404</p>
         <h1 className="mt-4 text-2xl font-bold tracking-tight text-ink sm:text-3xl">This page drifted out of scope.</h1>
         <p className="mx-auto mt-3 max-w-md text-base leading-relaxed text-ink-soft">
-          The page you're looking for doesn't exist or has moved. Let's get you back on track.
+          The page you&apos;re looking for doesn&apos;t exist or has moved. Let&apos;s get you back on track.
         </p>
         <div className="mt-8 flex items-center justify-center gap-3.5">
           <Link href="/" className="btn-primary">

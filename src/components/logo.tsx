@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 
 type LogoProps = {
@@ -15,7 +16,7 @@ export function Logo({ invert = false, href = "/" }: LogoProps) {
     >
       {/* The transparent wordmark reads best on a light tile, so we keep it on one in both themes. */}
       <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-[0_6px_16px_-6px_rgba(23,38,58,0.35)]">
-        <img
+        <Image
           src="/logo.png"
           alt={`${site.name} logo`}
           width={40}

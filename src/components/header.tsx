@@ -62,7 +62,7 @@ export function Header() {
         <div className="flex items-center gap-2.5">
           <ThemeToggle />
           <Link href="/contact" className="btn-primary hidden !px-5 !py-2.5 sm:inline-flex">
-            Let's talk
+            Let&apos;s talk
             <Icon name="arrowRight" className="text-[15px]" />
           </Link>
           <button
@@ -98,7 +98,7 @@ export function Header() {
             </Link>
           ))}
           <Link href="/contact" onClick={() => setOpen(false)} className="btn-primary mt-4">
-            Let's talk about your project
+            Let&apos;s talk about your project
             <Icon name="arrowRight" />
           </Link>
         </nav>

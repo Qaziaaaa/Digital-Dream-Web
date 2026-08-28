@@ -104,7 +104,7 @@ export function ContactForm() {
       <p className="text-xs leading-relaxed text-ink-soft" role={status === "error" ? "alert" : undefined}>
         {status === "sent" ? (
           <span className="font-medium text-emerald-600 dark:text-emerald-400">
-            ✓ Check your email app — your inquiry is ready to send. We'll reply within one business day.
+            ✓ Check your email app — your inquiry is ready to send. We&apos;ll reply within one business day.
           </span>
         ) : status === "error" ? (
           <span className="font-medium text-red-600 dark:text-red-400">

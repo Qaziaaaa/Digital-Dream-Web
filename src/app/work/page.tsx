@@ -94,7 +94,7 @@ export default function WorkPage() {
             </h2>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
               Every project ships with weekly updates, clear milestones, and a delivery date we commit
-              to in writing. If we miss it, you'll know before it happens — not after.
+              to in writing. If we miss it, you&apos;ll know before it happens — not after.
             </p>
             <Link href="/contact" className="btn-primary mt-8">
               Start your project
