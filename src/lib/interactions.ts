@@ -12,9 +12,9 @@ export const INITIAL_TRANSFORM: Record<RevealFx, string> = {
 };
 
 export const REVEAL: Record<string, { d: number; fx: RevealFx }> = {
-  "d5504ce9-62f9-6152-69f6-19b3d1c7918c": { d: 0, fx: "b" },
-  "d5504ce9-62f9-6152-69f6-19b3d1c7918f": { d: 0, fx: "b" },
-  "d5504ce9-62f9-6152-69f6-19b3d1c7919a": { d: 0, fx: "b" },
+  // note: the hero border elements (d5504ce9-...7918c/7918f/7919a) are NOT included —
+  // they run continuous loop animations (blue traveling line / border dots) and are
+  // 0-1px tall, so a scroll reveal would leave them permanently hidden.
   "f125550c-4eb5-5fa6-74d2-ee4a75889afb": { d: 500, fx: "g" },
   "9329c20e-2809-7b4b-2cc8-207944dc70bf": { d: 100, fx: "b" },
   "188cafa7-c96d-05f2-93a1-32690787c53a": { d: 200, fx: "b" },

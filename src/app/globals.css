@@ -461,6 +461,49 @@ body{ font-family: var(--_fonts---body-fonts); }
 .slider-arrow{ transition: color .3s ease; }
 .slider-arrow:hover{ color: var(--button-color); }
 
+/* card & subcard elevation: soft thin shadows for clarity / prominence.
+   Kept subtle on desktop, deepened on mobile (no hover affordance there). */
+.module-card,
+.tab-link,
+.tab-content-wrap,
+.about-image,
+.contact-info-wrapper,
+.contact-form-wrapper,
+.banner-badge-wrapper,
+.overview-image,
+.progress-image,
+.question-cover,
+.answear-cover{
+  box-shadow: 0 1px 2px rgba(1,30,59,.05), 0 6px 18px rgba(1,30,59,.08);
+}
+.pricing-card{
+  box-shadow: 0 1px 2px rgba(1,30,59,.05), 0 6px 18px rgba(1,30,59,.08);
+}
+
+/* mobile app-like polish: clear elevation, no tap flash, no text drag on touch */
+@media (max-width: 767px){
+  *{ -webkit-tap-highlight-color: transparent; }
+  .module-card,
+  .tab-link,
+  .tab-content-wrap,
+  .about-image,
+  .contact-info-wrapper,
+  .contact-form-wrapper,
+  .banner-badge-wrapper,
+  .overview-image,
+  .progress-image,
+  .question-cover,
+  .answear-cover{
+    box-shadow: 0 2px 4px rgba(1,30,59,.07), 0 10px 28px rgba(1,30,59,.12);
+  }
+  .pricing-card{
+    box-shadow: 0 2px 4px rgba(1,30,59,.07), 0 10px 28px rgba(1,30,59,.12);
+  }
+  .module-card,
+  .tab-link,
+  .question-wrapper{ -webkit-user-select:none; user-select:none; }
+}
+
 /* trust logos (static — reference has no hover) */
 
 /* contact fields */
