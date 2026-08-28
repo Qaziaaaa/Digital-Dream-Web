@@ -369,8 +369,12 @@ body{ font-family: var(--_fonts---body-fonts); }
 @media (max-width: 479px){ .menu-button{ width:32px; } }
 
 
-/* logo sizing: sized so the navbar matches the sample height (21px padding + ~40px logo) */
-.navbar .nav-image{ height:40px; width:auto; }
+/* logo sizing: bigger logo (56px), navbar total height kept at ~82px by trimming
+   vertical padding on desktop so it matches the sample nav height */
+.navbar .nav-image{ height:56px; width:auto; }
+@media (min-width: 992px){
+  .navbar{ padding-top: 13px; padding-bottom: 13px; }
+}
 .footer-logo{ max-width:180px; }
 .footer .logo-main{ height:34px; width:auto; }
 
