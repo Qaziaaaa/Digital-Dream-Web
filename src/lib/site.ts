@@ -3,12 +3,14 @@ export const site = {
   legalName: "Digital Dream Web",
   domain: process.env.NEXT_PUBLIC_SITE_URL || "https://digitaldreamweb.com",
   description:
-    "Digital Dream Web is a software development company crafting websites, web apps, mobile apps, SaaS platforms, and AI-powered solutions that are fast, secure, and built to scale.",
-  tagline: "Software, apps, and digital products built to perform.",
+    "A full-service software development agency crafting fast, secure websites, web apps, mobile apps, SaaS platforms, and AI-powered solutions that help businesses grow.",
+  tagline: "Websites, apps & software that convert.",
   email: "qazithekingston@gmail.com",
   phone: "+92 314 1935787",
+  phoneDisplay: "+92 314 1935787",
   whatsapp: "923141935787",
   location: "Peshawar, Pakistan",
+  address: ["Street 1, University Road", "Peshawar, KPK, Pakistan"],
   founded: 2024,
   social: {
     linkedin: "https://www.linkedin.com/in/qazi-farhan-ahmad",

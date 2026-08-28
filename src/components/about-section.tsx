@@ -1,0 +1,56 @@
+export function AboutSection() {
+  return (
+    <section id="About" className="section-about">
+      <div className="padding-global">
+        <div className="w-layout-blockcontainer container small w-container">
+          <div className="about-main-wrapper">
+            <div className="about-content">
+              <div className="inner-container">
+                <div className="section-tag-wrapper">
+                  <img
+                    src="/axiolance/690f74385894ecf58abef4d1_68bfb430481fa3c0e8610f39_Vector (3) 1.svg"
+                    loading="lazy"
+                    alt=""
+                    className="star-tag"
+                  />
+                  <div className="tag-text">About Digital Dream Web</div>
+                </div>
+              </div>
+              <h2 className="sub-heading">
+                A Full-Service Agency for Digital Products &amp; Growth
+              </h2>
+              <p className="text-large">
+                Digital Dream Web is a full-service software agency helping businesses design,
+                build, and scale digital products. From marketing websites to complex SaaS
+                platforms, we handle strategy, design, development, and growth — so you can focus
+                on running your business.
+              </p>
+              <div className="inner-container about">
+                <div className="about-count">
+                  <h2 className="sub-heading">
+                    2.5<span className="text-blue">x</span>
+                  </h2>
+                  <div className="text-large">Faster Delivery</div>
+                </div>
+                <div className="about-count">
+                  <h2 className="sub-heading">
+                    $2.5M<span className="text-blue">+</span>
+                  </h2>
+                  <div className="text-large">Client Revenue Generated</div>
+                </div>
+              </div>
+            </div>
+            <div className="about-image">
+              <img
+                src="/axiolance/691b629732d913f2c2326410_Ultimate-Application-for-Managing (2).avif"
+                loading="lazy"
+                alt="Digital Dream Web product showcase"
+                className="image-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

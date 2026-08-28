@@ -1,25 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { BackToTop } from "@/components/back-to-top";
 import { site } from "@/lib/site";
 
-const inter = Inter({
-  variable: "--font-inter",
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const sora = Sora({
-  variable: "--font-sora",
-  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
 const title = {
-  default: `${site.name} — Website & Software Development Company`,
+  default: `${site.name} — Websites, Apps & Software`,
   template: `%s | ${site.name}`,
 };
 
@@ -30,13 +22,13 @@ export const metadata: Metadata = {
   applicationName: site.name,
   keywords: [
     "software development company",
-    "web development",
+    "web development agency",
     "mobile app development",
     "UI UX design",
     "AI solutions",
     "SaaS development",
+    "e-commerce development",
     "SEO",
-    "digital marketing",
     "Next.js development",
     "MERN stack",
     site.name,
@@ -44,9 +36,7 @@ export const metadata: Metadata = {
   authors: [{ name: site.name, url: site.domain }],
   creator: site.name,
   publisher: site.name,
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -110,18 +100,13 @@ const websiteSchema = {
 
 export const viewport: Viewport = {
   themeColor: "#2684FC",
-  colorScheme: "light dark",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${sora.variable} scroll-smooth`}>
+    <html lang="en" className={interTight.variable}>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("ddw-theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}})();`,
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -131,19 +116,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-      <body className="flex min-h-screen flex-col bg-bg text-ink antialiased">
+      <body>
         <a
           href="#main"
-          className="fixed left-4 top-4 z-[100] -translate-y-20 rounded-full bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white transition-transform focus:translate-y-0"
+          style={{
+            position: "absolute",
+            left: "-9999px",
+            top: "auto",
+            width: "1px",
+            height: "1px",
+            overflow: "hidden",
+          }}
         >
           Skip to content
         </a>
-        <Header />
-        <main id="main" className="flex-1 outline-none">
-          {children}
-        </main>
-        <Footer />
-        <BackToTop />
+        <main id="main">{children}</main>
       </body>
     </html>
   );

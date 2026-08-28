@@ -1,88 +1,32 @@
-import type { Metadata } from "next";
-import { Hero } from "@/components/sections/hero";
-import { LogoMarquee } from "@/components/sections/logo-marquee";
-import { ServicesSection } from "@/components/sections/services-section";
-import { ProcessSection } from "@/components/sections/process-section";
-import { WhySection } from "@/components/sections/why-section";
-import { WorkSection } from "@/components/sections/work-section";
-import { TestimonialsSection } from "@/components/sections/testimonials-section";
-import { TeamSection } from "@/components/sections/team-section";
-import { FaqSection } from "@/components/sections/faq-section";
-import { CtaSection } from "@/components/sections/cta-section";
-import { services, faqs } from "@/lib/data";
-import { site } from "@/lib/site";
+import { Navbar } from "@/components/navbar";
+import { Hero, DashbordOverlay } from "@/components/hero";
+import { LogoStrip } from "@/components/logo-strip";
+import { AboutSection } from "@/components/about-section";
+import { FeaturesTabs } from "@/components/features-tabs";
+import { ModulesSection } from "@/components/modules-section";
+import { Testimonials } from "@/components/testimonials";
+import { PricingSection } from "@/components/pricing-section";
+import { ContactSection } from "@/components/contact-section";
+import { FaqSection } from "@/components/faq-section";
+import { Footer } from "@/components/site-footer";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: `${site.name} — Website & Software Development Company`,
-  },
-  description: site.description,
-  alternates: { canonical: "/" },
-  keywords: [
-    "software development company",
-    "web development agency",
-    "mobile app development",
-    "AI development",
-    "SaaS development",
-    "UI/UX design",
-    "SEO services",
-    site.name,
-  ],
-};
-
-const pageSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": `${site.domain}/#webpage`,
-      url: site.domain,
-      name: `${site.name} — Website & Software Development Company`,
-      description: site.description,
-      isPartOf: { "@id": `${site.domain}/#website` },
-      inLanguage: "en",
-    },
-    {
-      "@type": "OfferCatalog",
-      name: "Digital Dream Web services",
-      itemListElement: services.map((s) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: s.title,
-          description: s.short,
-          provider: { "@type": "Organization", name: site.name, url: site.domain },
-        },
-      })),
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: faqs.map((f) => ({
-        "@type": "Question",
-        name: f.question,
-        acceptedAnswer: { "@type": "Answer", text: f.answer },
-      })),
-    },
-  ],
-};
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
-      />
-      <Hero />
-      <LogoMarquee />
-      <ServicesSection />
-      <ProcessSection />
-      <WhySection />
-      <WorkSection />
-      <TestimonialsSection />
-      <TeamSection />
-      <FaqSection />
-      <CtaSection />
-    </>
+    <div className="page-wrapper">
+      <Navbar />
+      <div className="main-werapper">
+        <Hero />
+        <DashbordOverlay />
+        <LogoStrip />
+        <AboutSection />
+        <FeaturesTabs />
+        <ModulesSection />
+        <Testimonials />
+        <PricingSection />
+        <ContactSection />
+        <FaqSection />
+      </div>
+      <Footer />
+    </div>
   );
 }

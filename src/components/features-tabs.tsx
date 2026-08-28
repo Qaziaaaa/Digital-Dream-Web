@@ -1,0 +1,120 @@
+"use client";
+
+import { useState } from "react";
+
+const tabs = [
+  {
+    title: "Web Development",
+    desc: "Custom, high-performance websites and web apps built with Next.js, React, and the MERN stack — fast, secure, and SEO-ready.",
+    img: "/axiolance/691b691fd4e8df2c53622a35_Multitenancy (2).avif",
+    alt: "Web Development",
+  },
+  {
+    title: "Mobile Apps",
+    desc: "Native-feeling iOS and Android apps with clean architecture, offline support, and push notifications your users will love.",
+    img: "/axiolance/691b69857f36dba853a8771f_Multilingual.avif",
+    alt: "Mobile Apps",
+  },
+  {
+    title: "UI/UX Design",
+    desc: "Research-driven interfaces, wireframes, and design systems that turn visitors into customers.",
+    img: "/axiolance/691b69d3d9e0a78fac1e3ccb_Single-Page-Application.avif",
+    alt: "UI/UX Design",
+  },
+  {
+    title: "SaaS & Product Engineering",
+    desc: "From MVP to scale — multi-tenant dashboards, billing, and secure back ends that grow with your users.",
+    img: "/axiolance/691b6a557d08713cb399d8e2_Custom-Domain.avif",
+    alt: "SaaS & Product Engineering",
+  },
+  {
+    title: "AI & Automation",
+    desc: "Custom AI assistants, chatbots, and workflow automation that save your team hours every week.",
+    img: "/axiolance/691b6abe4e0a84a165d65d40_Stripe-Billing.avif",
+    alt: "AI & Automation",
+  },
+];
+
+const Arrow = () => (
+  <svg width="100%" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M18.5574 10.9594L13.8404 6.24243L13.1334 6.94943L17.7494 11.5664H5.01645V12.5664H17.7514L13.1334 17.1834L13.8404 17.8904L18.5574 13.1744C18.8534 12.8784 19.0164 12.4844 19.0164 12.0664C19.0164 11.6484 18.8534 11.2544 18.5574 10.9604V10.9594Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+export function FeaturesTabs() {
+  const [active, setActive] = useState(0);
+
+  return (
+    <section className="section-features">
+      <div className="padding-global">
+        <div className="w-layout-blockcontainer container w-container">
+          <div className="features-main-wrapper">
+            <div className="section-header is-max">
+              <div className="section-tag-wrapper">
+                <img
+                  src="/axiolance/690f74385894ecf58abef4d1_68bfb430481fa3c0e8610f39_Vector (3) 1.svg"
+                  loading="lazy"
+                  alt=""
+                  className="star-tag"
+                />
+                <div className="tag-text">Main Services</div>
+              </div>
+              <h2 className="sub-heading">
+                Everything You Need to Build and Grow Online
+              </h2>
+            </div>
+            <div className="features-tab-wrapper">
+              <div className="tabs w-tabs">
+                <div className="tabs-menu w-tab-menu" role="tablist">
+                  {tabs.map((t, i) => (
+                    <a
+                      key={t.title}
+                      href="#Services"
+                      role="tab"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActive(i);
+                      }}
+                      className={
+                        active === i
+                          ? "tab-link w-inline-block w-tab-link w--current"
+                          : "tab-link w-inline-block w-tab-link"
+                      }
+                    >
+                      <div className="tab-title-wrap">
+                        <div className="tab-title">{t.title}</div>
+                        <div className="arrow-right">
+                          <Arrow />
+                        </div>
+                      </div>
+                      <div className="tab-button-content">
+                        <div className="tab-description">{t.desc}</div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+                <div className="tabs-content w-tab-content">
+                  {tabs.map((t, i) => (
+                    <div
+                      key={t.title}
+                      className={
+                        active === i ? "w-tab-pane w--tab-active" : "w-tab-pane"
+                      }
+                    >
+                      <div className="tab-content-wrap">
+                        <img src={t.img} loading="lazy" alt={t.alt} className="tab-image" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
