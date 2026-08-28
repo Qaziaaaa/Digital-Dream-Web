@@ -96,7 +96,7 @@ export function Testimonials() {
               </div>
               <button type="button" aria-label="Previous testimonial" onClick={prev} className="left-arrow is-testimonial w-slider-arrow-left">
                 <div className="slider-arrow">
-                  <Arrow rotated />
+                  <Arrow />
                 </div>
               </button>
               <button type="button" aria-label="Next testimonial" onClick={next} className="right-arrow is-testimonial w-slider-arrow-right">
