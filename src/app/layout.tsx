@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
@@ -106,6 +106,11 @@ const websiteSchema = {
   description: site.description,
   inLanguage: "en",
   publisher: { "@type": "Organization", name: site.name, logo: `${site.domain}/logo.png` },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#2684FC",
+  colorScheme: "light dark",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

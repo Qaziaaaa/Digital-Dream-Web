@@ -13,6 +13,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: site.domain },
+    { "@type": "ListItem", position: 2, name: "Contact", item: `${site.domain}/contact` },
+  ],
+};
+
 const contactDetails = [
   {
     icon: "mail",
@@ -43,6 +52,7 @@ const contactDetails = [
 export default function ContactPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <PageHero
         eyebrow="Contact"
         title="Let's talk about your project."

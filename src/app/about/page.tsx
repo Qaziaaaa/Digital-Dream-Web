@@ -6,12 +6,22 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { TeamSection } from "@/components/sections/team-section";
 import { CtaSection } from "@/components/sections/cta-section";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
     "Digital Dream Web is a software studio from Peshawar, Pakistan building websites, apps, SaaS platforms, and AI solutions that perform and scale.",
   alternates: { canonical: "/about" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: site.domain },
+    { "@type": "ListItem", position: 2, name: "About Us", item: `${site.domain}/about` },
+  ],
 };
 
 const values = [
@@ -47,6 +57,7 @@ const milestones = [
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <PageHero
         eyebrow="About us"
         title="A small team with big ideas, building software that performs."

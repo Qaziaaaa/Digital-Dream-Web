@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { site } from "@/lib/site";
 import { Icon } from "./icons";
 
@@ -9,6 +9,16 @@ const inputCls =
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
+
+  useEffect(() => {
+    const service = new URLSearchParams(window.location.search).get("service");
+    if (service) {
+      const textarea = document.querySelector<HTMLTextAreaElement>('textarea[name="message"]');
+      if (textarea && !textarea.value) {
+        textarea.value = `Hi, I'm interested in ${service}. Here are the details of my project:`;
+      }
+    }
+  }, []);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();

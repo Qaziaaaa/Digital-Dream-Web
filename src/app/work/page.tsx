@@ -6,12 +6,22 @@ import { Reveal } from "@/components/reveal";
 import { ProcessSection } from "@/components/sections/process-section";
 import { WorkSection } from "@/components/sections/work-section";
 import { CtaSection } from "@/components/sections/cta-section";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Our Work & Process",
   description:
     "Explore Digital Dream Web's seven-step delivery process, flexible engagement models, and a selection of shipped projects.",
   alternates: { canonical: "/work" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: site.domain },
+    { "@type": "ListItem", position: 2, name: "Our Work & Process", item: `${site.domain}/work` },
+  ],
 };
 
 const engagementModels = [
@@ -38,6 +48,7 @@ const engagementModels = [
 export default function WorkPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <PageHero
         eyebrow="How we work"
         title="A predictable process. Transparent pricing. No surprises."
